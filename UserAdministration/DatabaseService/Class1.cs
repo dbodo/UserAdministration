@@ -39,7 +39,7 @@ namespace DatabaseService
         }
         public void UpdateUsers(User oUser)
         {
-            string sSqlConnectionString = "Data Source=193.198.57.183; Initial Catalog = DotNet; User ID = vjezbe; Password = vjezbe";
+            string sSqlConnectionString = "";
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
