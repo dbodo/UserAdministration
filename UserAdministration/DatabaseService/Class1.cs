@@ -14,7 +14,7 @@ namespace DatabaseService
     public List<User> GetUsers()
         {
             List<User> lUsers = new List<User>();
-            string sSqlConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"].ToString();
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
