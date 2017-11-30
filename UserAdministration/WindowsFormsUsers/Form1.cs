@@ -22,17 +22,20 @@ namespace WindowsFormsUsers
 
             // gumb za azuriranje korisnika
             DataGridViewImageColumn oEditButton = new DataGridViewImageColumn();   
-            oEditButton.Image = Image.FromFile("D:/DomagojBodo/icon.png");
+            oEditButton.Image = Image.FromFile("C:/Users/DomagojBodo/Documents/Icons/icon2.png");
             oEditButton.Width = 20;
             oEditButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewUsers.Columns.Add(oEditButton);
 
             // za brisanje korisnika
             DataGridViewImageColumn oDeleteButton = new DataGridViewImageColumn();
-            oDeleteButton.Image = Image.FromFile("D:/DomagojBodo/icon2.png");
+            oDeleteButton.Image = Image.FromFile("C:/Users/DomagojBodo/Documents/Icons/icon1.png");
             oDeleteButton.Width = 20;
             oDeleteButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewUsers.Columns.Add(oDeleteButton);
+
+            // dodavanje korisnika
+
 
             dataGridViewUsers.AutoGenerateColumns = false;
         }

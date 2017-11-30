@@ -46,9 +46,9 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridViewUsers.Location = new System.Drawing.Point(121, 48);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(12, 12);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
-            this.dataGridViewUsers.Size = new System.Drawing.Size(610, 124);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(587, 109);
             this.dataGridViewUsers.TabIndex = 0;
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
             // 
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 261);
+            this.ClientSize = new System.Drawing.Size(613, 261);
             this.Controls.Add(this.dataGridViewUsers);
             this.Name = "Form1";
             this.Text = "Form1";

@@ -14,7 +14,7 @@ namespace DatabaseService
     public List<User> GetUsers()
         {
             List<User> lUsers = new List<User>();
-            string sSqlConnectionString = ConfigurationManager.AppSettings["ConnectionString"].ToString();
+            string sSqlConnectionString;
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
@@ -39,7 +39,7 @@ namespace DatabaseService
         }
         public void UpdateUsers(User oUser)
         {
-            string sSqlConnectionString = "";
+            string sSqlConnectionString;
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
