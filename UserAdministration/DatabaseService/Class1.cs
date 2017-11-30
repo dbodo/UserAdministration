@@ -14,7 +14,7 @@ namespace DatabaseService
     public List<User> GetUsers()
         {
             List<User> lUsers = new List<User>();
-            string sSqlConnectionString;
+            String sSqlConnectionString = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
@@ -39,7 +39,7 @@ namespace DatabaseService
         }
         public void UpdateUsers(User oUser)
         {
-            string sSqlConnectionString;
+            String sSqlConnectionString = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
             using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
             using (DbCommand oCommand = oConnection.CreateCommand())
             {
@@ -51,6 +51,38 @@ namespace DatabaseService
                 }
             }
         }
+        public void DeleteUsers(User oUser)
+        {
+            String sSqlConnectionString = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())
+            {
+                oCommand.CommandText = "DELETE FROM users WHERE USER_ID =  '" + oUser.nUserID + "'";
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+
+                }
+            }
+        }
+
+        public void AddUsers(User oUser)
+        {
+            String sSqlConnectionString = ConfigurationManager.ConnectionStrings["DbConnection"].ConnectionString;
+            using (DbConnection oConnection = new SqlConnection(sSqlConnectionString))
+            using (DbCommand oCommand = oConnection.CreateCommand())
+            {
+                oCommand.CommandText = "INSERT INTO users (USERNAME, PASSWORD, NAME, SURNAME) VALUES('" + oUser.sUserName + "', '" + oUser.sUserPassword + "', '" + oUser.sUserFirstName + "', '" + oUser.sUserLastName + "')";
+                oConnection.Open();
+                using (DbDataReader oReader = oCommand.ExecuteReader())
+                {
+
+                }
+            }
+        }
+
+
+
     }
 
 }

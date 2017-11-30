@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseService", "Database
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsUsers", "WindowsFormsUsers\WindowsFormsUsers.csproj", "{F556F193-D36C-4533-9C61-61074C7964BE}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UserAdministratio", "UserAdministratio\UserAdministratio.vdproj", "{F638E166-E5F2-4C14-84CF-3E5FB402A523}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{F556F193-D36C-4533-9C61-61074C7964BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F556F193-D36C-4533-9C61-61074C7964BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F556F193-D36C-4533-9C61-61074C7964BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F638E166-E5F2-4C14-84CF-3E5FB402A523}.Debug|Any CPU.ActiveCfg = Debug
+		{F638E166-E5F2-4C14-84CF-3E5FB402A523}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseService;  // koristimo servis
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Data.Common;
+
 
 namespace WindowsFormsUsers
 {
@@ -22,21 +26,20 @@ namespace WindowsFormsUsers
 
             // gumb za azuriranje korisnika
             DataGridViewImageColumn oEditButton = new DataGridViewImageColumn();   
-            oEditButton.Image = Image.FromFile("C:/Users/DomagojBodo/Documents/Icons/icon2.png");
+            oEditButton.Image = Image.FromFile("D:/DomagojBodo/icons/icon.png");
             oEditButton.Width = 20;
             oEditButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewUsers.Columns.Add(oEditButton);
 
             // za brisanje korisnika
             DataGridViewImageColumn oDeleteButton = new DataGridViewImageColumn();
-            oDeleteButton.Image = Image.FromFile("C:/Users/DomagojBodo/Documents/Icons/icon1.png");
+            oDeleteButton.Image = Image.FromFile("D:/DomagojBodo/icons/icon2.png");
             oDeleteButton.Width = 20;
             oDeleteButton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewUsers.Columns.Add(oDeleteButton);
 
-            // dodavanje korisnika
 
-
+            dataGridViewUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.Cyan;
             dataGridViewUsers.AutoGenerateColumns = false;
         }
 
@@ -53,8 +56,43 @@ namespace WindowsFormsUsers
                 FormEditUser.inptEditSurname.Text = dataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();            
                 FormEditUser.Show();
             }
+            if(dataGridViewUsers.CurrentCell.ColumnIndex.Equals(6) && e.RowIndex != -1)
+            {
+                FormDeleteUser FormDeleteUser = new FormDeleteUser(this);
+                FormDeleteUser.ID = dataGridViewUsers.Rows[e.RowIndex].Cells[0].Value.ToString();
+                FormDeleteUser.UserName = dataGridViewUsers.Rows[e.RowIndex].Cells[1].Value.ToString();
+                FormDeleteUser.Password = dataGridViewUsers.Rows[e.RowIndex].Cells[2].Value.ToString();
+                FormDeleteUser.FirstName = dataGridViewUsers.Rows[e.RowIndex].Cells[3].Value.ToString();
+                FormDeleteUser.Surname = dataGridViewUsers.Rows[e.RowIndex].Cells[4].Value.ToString();
+                FormDeleteUser.Show();
+            }          
         }
 
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            FormAddUser AddNewUser = new FormAddUser(this);
+            AddNewUser.Show();
+        }
+
+        private void btnSearchUser_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void izlazToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void izbornikToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
 

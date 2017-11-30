@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnDeleteZatvori = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -37,40 +36,32 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(23, 41);
+            this.label1.Location = new System.Drawing.Point(22, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "Obriši Korisnika?";
             // 
-            // btnDeleteZatvori
-            // 
-            this.btnDeleteZatvori.Location = new System.Drawing.Point(27, 81);
-            this.btnDeleteZatvori.Name = "btnDeleteZatvori";
-            this.btnDeleteZatvori.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteZatvori.TabIndex = 1;
-            this.btnDeleteZatvori.Text = "ZATVORI";
-            this.btnDeleteZatvori.UseVisualStyleBackColor = true;
-            // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(128, 81);
+            this.btnDeleteUser.Location = new System.Drawing.Point(127, 88);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteUser.TabIndex = 2;
             this.btnDeleteUser.Text = "OBRIŠI";
             this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
             // FormDeleteUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 173);
+            this.ClientSize = new System.Drawing.Size(232, 146);
             this.Controls.Add(this.btnDeleteUser);
-            this.Controls.Add(this.btnDeleteZatvori);
             this.Controls.Add(this.label1);
             this.Name = "FormDeleteUser";
-            this.Text = "Form3";
+            this.Text = "Obriši Korisnika";
+            this.Load += new System.EventHandler(this.FormDeleteUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,7 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDeleteZatvori;
         private System.Windows.Forms.Button btnDeleteUser;
     }
 }
